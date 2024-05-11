@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 from sqlmodel import Field, Session, SQLModel, create_engine, select
-from app.main import todo_server
+from app.main import todo_server, get_session
 from app import settings
 
 
@@ -41,7 +41,7 @@ def test_create_todo():
         def get_session_override():
             return session
 
-        todo_server.dependency_overrides[Session] = get_session_override
+        todo_server.dependency_overrides[get_session] = get_session_override
 
         client = TestClient(app=todo_server)
 
