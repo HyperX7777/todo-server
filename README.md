@@ -22,16 +22,20 @@ This is a FastAPI application for managing todo items.
 
    ```bash
    git clone https://github.com/your-repo/todo-app.git
-
+   ```
 ### Install Dependencies
 
-    ```poetry install
+   ```bash
+poetry install
+   ```
 
  Set up the database URL in .env
 
 ## Run the FastAPI server:
 
-    ```bash poetry run uvicorn app.main:todo_server --reload
+   ```bash
+    poetry run uvicorn app.main:todo_server --reload
+   ```
 
 ## Usage
 
